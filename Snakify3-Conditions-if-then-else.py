@@ -204,3 +204,14 @@ else:
 #ideal solution combines the if and first elif using <=1 (this includes 0 and 1 distances. )
 
 #8) Bishop moves:
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+
+if abs(a-c)==abs(b-d):
+    print('YES')
+else:
+    print('NO')
+
+#9)Queen move
