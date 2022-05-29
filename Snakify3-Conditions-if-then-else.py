@@ -236,3 +236,35 @@ elif (abs(c-a)==2) and (abs(d-b)==1):
     print('YES')
 else:
     print('NO')
+
+#11) chocolate bar
+#Chocolate bar has the form of a rectangle divided into n×m portions. Chocolate bar
+#can be split into two rectangular parts by breaking it along a selected straight line
+#on its pattern. Determine whether it is possible to split it so that one of the parts
+#will have exactly k squares. The program reads three integers: n, m, and k.
+#It should print YES or NO.
+a = int(input())
+b = int(input())
+c = int(input())
+
+if a*b>c:
+    if c%b==0 or c%a==0:
+        print('YES')
+    else:
+        print('NO')
+else:
+    print('NO')
+
+#tidied up to give model solution:
+if a*b>c and (c%b==0 or c%a==0):
+    print('YES')
+else:
+    print('NO')
+
+#12 Leap year question:
+ #Given the year number. You need to check if this year is a leap year. Return 'LEAP' or 'COMMON'
+a = int(input())
+if a%4==0 and a%100!=0 or a%400==0:
+    print('LEAP')
+else:
+    print('COMMON')
