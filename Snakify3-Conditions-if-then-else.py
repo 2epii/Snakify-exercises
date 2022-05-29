@@ -155,14 +155,13 @@ if a ==c or b == d:
 else:
     print('NO')
 
+#6 Given two cells of a chessboard. If they are painted in one color, print the word YES, and if in a different color - NO.
+#The program receives the input of four numbers from 1 to 8, each specifying the column and row number,
+#first two - for the first cell, and then the last two - for the second cell.
 a = int(input())
 b = int(input())
 c = int(input())
 d = int(input())
-
-#6 Given two cells of a chessboard. If they are painted in one color, print the word YES, and if in a different color - NO.
-#The program receives the input of four numbers from 1 to 8, each specifying the column and row number,
-#first two - for the first cell, and then the last two - for the second cell.
 
 if (a in(1,3,5,7) and b in(1,3,5,7)) and ((c in(1,3,5,7) and d in(1,3,5,7)) or (c in(2,4,6,8)and d in(2,4,6,8))):
     print('YES')
@@ -214,4 +213,26 @@ if abs(a-c)==abs(b-d):
 else:
     print('NO')
 
-#9)Queen move
+#9)Queen move - combination of rook and bishop move it seems.
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+
+if abs(a-c)==abs(b-d) or (a ==c or b == d):
+    print('YES')
+else:
+    print('NO')
+
+#10 Knight move
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+
+if (abs(c-a)==1) and (abs(d-b)==2):
+    print('YES')
+elif (abs(c-a)==2) and (abs(d-b)==1):
+    print('YES')
+else:
+    print('NO')
