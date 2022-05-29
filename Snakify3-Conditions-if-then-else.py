@@ -160,7 +160,7 @@ b = int(input())
 c = int(input())
 d = int(input())
 
-#Given two cells of a chessboard. If they are painted in one color, print the word YES, and if in a different color - NO.
+#6 Given two cells of a chessboard. If they are painted in one color, print the word YES, and if in a different color - NO.
 #The program receives the input of four numbers from 1 to 8, each specifying the column and row number,
 #first two - for the first cell, and then the last two - for the second cell.
 
@@ -184,3 +184,23 @@ if (x1 + y1 + x2 + y2) % 2 == 0:
     print('YES')
 else:
     print('NO')
+#7) Chess king moves horizontally, vertically or diagonally to any adjacent cell. Given two different cells of the chessboard,
+#determine whether a king can go from the first cell to the second in one move.
+#The program receives the input of four numbers from 1 to 8, each specifying the column and row number, first two -
+#for the first cell, and then the last two - for the second cell. The program should output YES if a king can
+#go from the first cell to the second in one move, or NO otherwise.
+
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+
+if abs(a-c)==1 and abs(b-d)==1:
+    print('YES')
+elif (abs(a-c)==1 and abs(b-d)==0) or (abs(b-d)==1 and abs(a-c)==0):
+    print('YES')
+else:
+    print('NO')
+#ideal solution combines the if and first elif using <=1 (this includes 0 and 1 distances. )
+
+#8) Bishop moves:
