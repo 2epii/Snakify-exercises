@@ -72,3 +72,60 @@ n = int(input())
 for i in range(1, n + 1):
     res *= i
 print(res)
+
+#7 Given N numbers: the first number in the input is N, after that N integers are given. Count the number of zeros among the given integers and print it.
+# number of numbers that are equal to zero, not the number of zero digits.
+n = int(input())
+count = 0
+for i in range(n):
+    if int(input())==0:
+        count+=1
+print(count)
+
+#8)Given an integer n, print the sum 1!+2!+3!+...+n!.
+#This problem has a solution with only one loop, so try to discover it. And don't use the math library :)
+
+n = int(input())
+sum = 0
+p=1
+for i in range(1,n+1):
+    p=p*i
+    sum+=p
+print(sum)
+
+#9 For given integer n ≤ 9 print a ladder of n steps. The k-th step consists of the integers from 1 to k without spaces between them.
+#To do that, you can use the sep and end arguments for the function print().
+n = int(input())
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print(j, end = '')
+    print()
+
+#10) There was a set of cards with numbers from 1 to N. One of the card is now lost.
+#Determine the number on that lost card given the numbers for the remaining cards.
+# Given a number N, followed by N − 1 integers - representing the numbers on the remaining
+# cards (distinct integers in the range from 1 to N). Find and print the number on the lost card.
+
+ls1 =[]
+ls2=[]
+for i in range(a):
+    ls1.append(i+1)
+
+for i in range(a-1):
+    ls2.append(int(input()))
+
+for i in ls2:
+    ls1.remove(i)
+print(ls1[0])
+
+#model solution:
+n = int(input())
+sum_cards = 0
+for i in range(1, n + 1):
+    sum_cards += i
+# One can prove the following:
+# sum_cards == n * (n + 1) // 2
+# However, we'll calculate that using the loop.
+for i in range(n - 1):
+    sum_cards -= int(input())
+print(sum_cards)
