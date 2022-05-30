@@ -152,3 +152,86 @@ print(('aaaaaaaaaa').count('aa')) # 5
 # performed within the slice s[left:right].
 
 #--------------------End of Theory - questions below!----------------------------------
+# Q1):
+# In the first line, print the third character of this string.
+# In the second line, print the second to last character of this string.
+# In the third line, print the first five characters of this string.
+# In the fourth line, print all but the last two characters of this string.
+# In the fifth line, print all the characters of this string with even indices
+# (remember indexing starts at 0, so the characters are displayed starting with the first).
+# In the sixth line, print all the characters of this string with odd indices (i.e. starting
+# with the second character in the string).
+# In the seventh line, print all the characters of the string in reverse order.
+# In the eighth line, print every second character of the string in reverse order, starting
+# from the last one.
+# In the ninth line, print the length of the given string.
+s = input()
+print(s[2])
+print(s[-2])
+print(s[:5])
+print(s[:-2])
+print(s[0::2])
+print(s[1::2])
+print(s[::-1])
+print(s[-1::-2])
+print(len(s))
+
+#Q2):  Given a string consisting of words separated by spaces. Determine how many words it has.
+# To solve the problem, use the method count.
+a = input()
+print(a.count(" ")+1)
+
+#3)Given a string. Cut it into two "equal" parts (If the length of the string is odd, place
+#the center character in the first string, so that the first string contains one more characther
+#than the second). Now print a new string on a single row with the first and second halfs
+#interchanged (second half first and the first half second)
+#Don't use the statement if in this task.
+a = input()
+import math
+lenofstring = len(a)
+divided_by_2=math.ceil(lenofstring/2)
+print(a[divided_by_2:],a[:divided_by_2], sep = '')
+
+#model solution:
+s = input()
+print(s[(len(s) + 1) // 2:] + s[:(len(s) + 1) // 2])
+
+#Q4) Given a string consisting of exactly two words separated by a space. Print a new
+#string with the first and second word positions swapped (the second word is printed first).
+#This task should not use loops and if.
+a=input()
+print(a[a.find(' ')+1:],a[:a.find(' ')])
+
+#Q5)Given a string that may or may not contain a letter of interest. Print the
+#index location of the first and last appearance of f. If the letter f occurs only
+#once, then output its index. If the letter f does not occur, then do not print anything.
+#Don't use loops in this task.
+a = input()
+if a.count('f')==1:
+    print(a.find('f'))
+elif a.count('f')>1:
+    print(a.find('f'),a.rfind('f'))
+elif a.count('f')==0:
+    print('')
+else:
+    print("case not captured")
+
+# Q6) Given a string that may or may not contain the letter of interest. Print the index
+# location of the second occurrence of the letter f. If the string contains the letter f
+# only once, then print -1, and if the string does not contain the letter f, then print -2.
+a = input()
+if a.count('f')==0:
+    print(-2)
+elif a.count('f')==1:
+    print(-1)
+elif a.count('f')>=2:
+    print(a.replace('f','m',1).find('f'))
+
+#model solution makse use of the find after index feature:
+    s = input()
+if s.count('f') == 1:
+    print(-1)
+elif s.count('f') < 1:
+    print(-2)
+else:
+    print(s.find('f', s.find('f') + 1))
