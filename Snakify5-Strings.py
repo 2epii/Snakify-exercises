@@ -117,3 +117,15 @@ print(s.find('L')) # -1 # this is returned when string not found. -1 = not found
 s = 'abracadabra'
 print(s.find('b') # 1
 print(s.rfind('b')) # 8
+
+# If you call find() with three arguments s.find(substring, left, right), the search
+# is performed inside the slice s[left:right]. If you specify only two arguments,
+# like s.find(substring, left), the search is performed in the slice s[left:], that is,
+# starting with the character at index left to the end of the string.
+# Method s.find(substring, left, right) returns the absolute index, relatively to the
+# whole string s, and not to the slice.
+s = 'my name is bond, james bond, okay?'
+print(s.find('bond')) # 11
+print(s.find('bond', 12)) # 23
+
+#--------------------End of Theory - questions below!----------------------------------
