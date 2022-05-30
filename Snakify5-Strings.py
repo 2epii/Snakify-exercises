@@ -235,3 +235,58 @@ elif s.count('f') < 1:
     print(-2)
 else:
     print(s.find('f', s.find('f') + 1))
+
+#Q7: Remove the fragment: Given a string in which the letter h occurs at least twice.
+#Remove from that string the first and the last occurrence of the letter h, as well as
+#all the characters between them.
+a = input()
+first=a.find('h')
+last = a.rfind('h')
+print(a[0:first]+a[last+1:])
+
+#Q8:Given a string in which the letter h occurs at least two times, reverse the
+#sequence of characters enclosed between the first and last appearances.
+a = input()
+first=a.find('h')
+last = a.rfind('h')
+z = a[first:last]
+print(a[0:first+1]+z[::-1]+a[last+1:])
+#print(z[::-1])
+#9) replace the subsctring. Given a string. Replace in this string all the numbers 1 by the word one.
+a = input()
+print(a.replace('1','one'))
+
+#Q10) Delete a character. Given a string. Remove from this string all the characters @.
+a = input()
+print(a.replace('@',''))
+
+#Q11)Replace with fragment. Given a string. Replace every occurrence of the letter h
+#by the letter H, except for the first and the last ones.
+a = input()
+first = a.find('h')+1
+last = a.rfind('h')
+tmp_str = a[first:last]
+#print(tmp_str)
+print(a[:first]+tmp_str.replace('h','H')+a[last:])
+
+# Q11) Delete every third character. Given a string. Delete from it all the characters
+# whose indices are divisible by 3.
+a=input()
+lst=[]
+for i in range(len(a)):
+    if i%3==0:
+        lst.append(i) # index to replace with space
+for j in lst[::-1]:
+    a=a.replace(a[j],' ',1)
+
+a = a.replace(' ','')
+print(a)
+
+
+#model solution is cleaner = looks at those that are not divisible by 0 and adds this to new strings
+s = input()
+t = ''
+for i in range(len(s)):
+    if i % 3 != 0:
+        t = t + s[i]
+print(t)
