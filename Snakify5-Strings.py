@@ -128,4 +128,27 @@ s = 'my name is bond, james bond, okay?'
 print(s.find('bond')) # 11
 print(s.find('bond', 12)) # 23
 
+# 7. String methods: replace()
+# Method replace() replaces all occurrences of a given substring with another one.
+# Syntax: s.replace(old, new)  takes the string S and replaces all occurrences of
+# substring old with the substring new.
+# eg:
+print('a bar is a bar, essentially'.replace('bar', 'pub')) # 'a pub is a pub, essentially'
+
+# One can pass the third argument count, like this: s.replace(old, new, count). It
+# makes replace() to replace only first count occurrences and then stop.
+# e.g.:
+print('a bar is a bar, essentially'.replace('bar', 'pub', 1)) # 'a pub is a bar, essentially'
+
+# 8. String methods: count()
+# This method counts the number of occurrences of one string within another string.
+# The simplest form is this one: s.count(substring). Only non-overlapping occurrences
+# are taken into account:
+# e.g.
+print('Abracadabra'.count('a')) # 4
+print(('aaaaaaaaaa').count('aa')) # 5
+
+# If you specify three parameters s.count(substring, left, right), the count is
+# performed within the slice s[left:right].
+
 #--------------------End of Theory - questions below!----------------------------------
