@@ -228,22 +228,141 @@ else:
 # Determine the length of the sequence, where the sequence ends when the integer is equal to 0.
 # Print the length of the sequence (not counting the integer 0). The numbers following the
 # number 0 should be omitted.
+a=-1
+count = 0
+while a!=0:
+    a=int(input())
+    count+=1
+else:
+    print(count-1)
 
-#The sum of the sequence
+#Model solution:
+len = 0
+while int(input()) != 0:
+    len += 1
+print(len)
+
+#The sum of the sequence: Determine the sum of all elements in the sequence, ending with the number 0.
+sum=0
+a=-1
+while a!=0:
+    a=int(input())
+    sum+=a
+print(sum)
 
 #The average of the sequence
+len = 0
+sum = 0
+a=-1
+while a!=0:
+    len+=1
+    a=int(input())
+    sum+=a
+    if a ==0:
+        break
+print(sum/(len-1))
+
+#model solution:
+sum = 0
+len = 0
+element = int(input())
+while element != 0:
+    sum += element
+    len += 1
+    element = int(input())
+print(sum / len)
 
 #The maximum of the sequence
+element = int(input())
+max = 0
+while element!=0:
+    if element>max:
+        max = element
+    element = int(input())
+print(max)
 
-#The index of the maximum of a sequence
+#The index of the maximum of a sequence:A sequence consists of integer numbers and
+#ends with the number 0. Determine the index of the largest element of the sequence.
+#If the highest element is not unique, print the index of the first of them.
+element = int(input())
+max = 0
+index = 0
+index_max =0
+while element!=0:
+    index+=1
+    if element>max:
+        max = element
+        index_max = index
+    element = int(input())
+print(index_max)
 
-#The number of even elements of the sequence
+#The number of even elements of the sequence: Determine the number of even elements in the sequence ending with the number 0.
+count=0
+a = -1
+while a!=0:
+    a=int(input())
+    if a%2==0 and a!=0:
+        count+=1
+print(count)
 
 #The number of elements that are greater than the previous one
+#not the best solution but it works!
+count=0
+count1=0
+lst=[]
+a=-1
+count = 0
 
-#The second maximum
+while a!=0:
+    a=int(input())
+    lst.append(a)
+    if a==0:
+        lst.remove(0)
 
-#The number of elements equal to the maximum Fibonacci numbers
+for i in range(len(lst)-1):
+    if lst[i+1]>lst[i]:
+        count+=1
+#print(lst)
+print(count)
+
+#model solution:
+prev = int(input())
+answer = 0
+while prev != 0:
+    next = int(input())
+    if next != 0 and prev < next:
+        answer += 1
+    prev = next
+print(answer)
+
+#The second maximum: The sequence consists of distinct positive integer numbers
+# and ends with the number 0. Determine the value of the second largest element in
+# this sequence. It is guaranteed that the sequence has at least two elements.
+lst = []
+a=int(input())
+while a!=0:
+    lst.append(a)
+    lst.sort()
+    a=int(input())
+print(lst[-2])
+
+#model solution:
+first_max = int(input())
+second_max = int(input())
+if first_max < second_max:
+    first_max, second_max = second_max, first_max
+element = int(input())
+while element != 0:
+    if element > first_max:
+        second_max, first_max = first_max, element
+    elif element > second_max:
+        second_max = element
+    element = int(input())
+print(second_max)
+
+
+#The number of elements equal to the maximum Fibonacci numbers:A sequence consists of integer
+#numbers and ends with the number 0. Determine how many elements of this sequence are equal to its largest element. 
 
 #The index of a Fibonacci number
 
