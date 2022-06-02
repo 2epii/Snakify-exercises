@@ -362,8 +362,127 @@ print(second_max)
 
 
 #The number of elements equal to the maximum Fibonacci numbers:A sequence consists of integer
-#numbers and ends with the number 0. Determine how many elements of this sequence are equal to its largest element. 
+#numbers and ends with the number 0. Determine how many elements of this sequence are equal to its largest element.
+lst=[]
+a = int(input())
+b=0
+count = 0
+lst.append(a)
+while a!=0:
+    a=int(input())
+    lst.append(a)
+lst.remove(0)
+lst.sort()
+max_in_lst = lst[-1]
+for i in lst:
+    if int(i)==max_in_lst:
+        count+=1
+print(count)
 
+#model solution:
+maximum = 0
+num_maximal = 0
+element = -1
+while element != 0:
+    element = int(input())
+    if element > maximum:
+        maximum, num_maximal = element, 1
+    elif element == maximum:
+        num_maximal += 1
+print(num_maximal)
+#Fibonacci numbers:
+a = int(input())
+prev_num1 = 0
+prev_num2 = 1
+next_num = 0
+Fib_seq = 0
+for i in range(a):
+    next_num = prev_num1+prev_num2
+    #print("index: ",i,"next no: ",next_num)
+    prev_num2 = prev_num1
+    prev_num1 = next_num
+print(next_num)
+
+#alternative solution
+n = int(input())
+if n==0:
+    print(0)
+else:
+    a,b=0,1
+    for i in range(2,n+1):
+        a,b = b,a+b
+    print(b)
 #The index of a Fibonacci number
+#A number is Fibonacci if and only if one or both of (5*n^2 + 4) or (5*n^2 – 4) is a perfect square
+n = float(input())
+bool_val=False
+x = 5*n*n+4
+y = 5*n*n-4
 
+if ((x**0.5)-int(x**0.5)==0) or ((y**0.5)-int(y**0.5)==0):
+    #Fib number
+    bool_val=True
+else:
+    #not fib number
+    print(-1)
+
+if bool_val==True:
+    a,b = 0,1
+    lst=[0,1]
+    while b!=n:
+        a,b=b,a+b
+        lst.append(b)
+    print(len(lst)-1)
+
+#model solution:
+a = int(input())
+if a == 0:
+    print(0)
+else:
+    fib_prev, fib_next = 0, 1
+    n = 1
+    while fib_next <= a:
+        if fib_next == a:
+            print(n)
+            break
+        fib_prev, fib_next = fib_next, fib_prev + fib_next
+        n += 1
+    else:
+        print(-1)
 #The maximum number of consecutive equal elements"
+
+a = -1
+lst =[]
+while a!=0:
+    a=int(input())
+    lst.append(a)
+#print(lst)
+
+element = lst
+i = 1
+counter = 1
+max_frag =0
+
+for i in range(len(lst)-1):
+    if element[i+1]== element[i]:
+        counter+=1
+    else:
+        max_frag = max(max_frag,counter)
+        counter = 1
+print(max_frag)
+
+#model solution:
+prev = -1
+curr_rep_len = 0
+max_rep_len = 0
+element = int(input())
+while element != 0:
+    if prev == element:
+        curr_rep_len += 1
+    else:
+        prev = element
+        max_rep_len = max(max_rep_len, curr_rep_len)
+        curr_rep_len = 1
+    element = int(input())
+max_rep_len = max(max_rep_len, curr_rep_len)
+print(max_rep_len)
